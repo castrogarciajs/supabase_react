@@ -1,11 +1,14 @@
 import React from "react";
+import supabase from "../supabase/supabase";
 
 export function Login() {
   const [email, setEmail] = React.useState("");
 
   const handleChange = (e) => setEmail(e.target.value);
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <form onSubmit={handleSubmit}>
