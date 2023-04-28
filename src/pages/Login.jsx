@@ -6,11 +6,17 @@ export function Login() {
 
   const handleChange = (e) => setEmail(e.target.value);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    supabase.auth.signInWithOtp({
-      email,
-    });
+    try {
+      await supabase.auth.signInWithOtp({
+        email,
+      });
+      return;
+    } catch (error) {
+      console.log(error.message);
+      return;
+    }
   };
 
   return (
