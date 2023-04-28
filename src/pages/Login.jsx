@@ -8,6 +8,9 @@ export function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    supabase.auth.signInWithOtp({
+      email,
+    });
   };
 
   return (
