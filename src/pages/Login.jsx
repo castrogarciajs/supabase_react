@@ -1,24 +1,7 @@
-import React from "react";
-import supabase from "../supabase/supabase";
+import { useLogin } from "../hooks/useLogin";
 
 export function Login() {
-  const [email, setEmail] = React.useState("");
-
-  const handleChange = (e) => setEmail(e.target.value);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await supabase.auth.signInWithOtp({
-        email,
-      });
-      return;
-    } catch (error) {
-      console.log(error.message);
-      return;
-    }
-  };
-
+  const { handleChange, handleSubmit } = useLogin();
   return (
     <form onSubmit={handleSubmit}>
       <p>
