@@ -1,6 +1,6 @@
 import { useLogin } from "../hooks/useLogin";
 
-export function Login() {
+export function LoginPage() {
   const { handleChange, handleSubmit } = useLogin();
   return (
     <form onSubmit={handleSubmit}>
