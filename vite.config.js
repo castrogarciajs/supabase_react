@@ -5,7 +5,8 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
   plugins: [react()],
   envDir: {
-    SUPBASE_PROJECT_URL: process.env.SUPBASE_PROJECT_URL,
-    SUPBASE_PROJECT_API_KEY: process.env.SUPBASE_PROJECT_API_KEY,
+    REACT_APP_SUPBASE_PROJECT_URL: process.env.REACT_APP_SUPBASE_PROJECT_URL,
+    REACT_APP_SUPBASE_PROJECT_API_KEY:
+      process.env.REACT_APP_SUPBASE_PROJECT_API_KEY,
   },
 });
