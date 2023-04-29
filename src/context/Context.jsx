@@ -53,9 +53,12 @@ function Context({ children }) {
       .from("supbase_tasks")
       .delete()
       .eq("user", data.user.id)
-      .eq("id", id);
+      .eq("id", id)
+      .select();
 
     if (response.error) throw response.error;
+
+    setPosts(posts.filter((post) => post.id !== id));
   };
   return (
     <PostContext.Provider
