@@ -1,8 +1,8 @@
-import React from "react";
+import { useState } from "react";
 import { supabase } from "../supabase/supabase";
 
 export function useLogin() {
-  const [email, setEmail] = React.useState("");
+  const [email, setEmail] = useState("");
 
   const handleChange = (e) => setEmail(e.target.value);
 

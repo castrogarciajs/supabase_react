@@ -7,7 +7,7 @@ export function Posts() {
   useEffect(() => {
     get();
   }, []);
-  console.log(posts);
+  
   return (
     <div>
       {posts.map((post) => {

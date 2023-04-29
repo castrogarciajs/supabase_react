@@ -19,11 +19,27 @@ function Context({ children }) {
 
     setPosts(response.data);
   };
+
+  const create = async (name) => {
+    try {
+      const { data } = await supabase.auth.getUser();
+
+      await supabase.from("supbase_tasks").insert({
+        name: name,
+        user: data.user.id,
+      });
+      return;
+    } catch (error) {
+      console.log(error.message);
+      return;
+    }
+  };
   return (
     <PostContext.Provider
       value={{
         posts,
         get,
+        create,
       }}
     >
       {children}

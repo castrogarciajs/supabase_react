@@ -1,26 +1,14 @@
 import { useState } from "react";
-import { supabase } from "../supabase/supabase";
+import { usePost } from "../hooks/usePost";
 
 export function PostForm() {
   const [name, setName] = useState("");
-
+  const { create } = usePost();
   const handleChange = (e) => setName(e.target.value);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      const { data } = await supabase.auth.getUser();
-
-      await supabase.from("supbase_tasks").insert({
-        name: name,
-        user: data.user.id,
-      });
-      return;
-    } catch (error) {
-      console.log(error.message);
-      return;
-    }
+    create(name);
   };
   return (
     <form onSubmit={handleSubmit}>
