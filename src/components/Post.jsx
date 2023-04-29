@@ -18,7 +18,7 @@ export function Post({ post }) {
         </div>
         <div>
           <button onClick={handleDelelte}>DELETE</button>
-          <button onClick={() => handleDone()}>DONE</button>
+          <button onClick={handleDone}>DONE</button>
         </div>
       </div>
     </>
