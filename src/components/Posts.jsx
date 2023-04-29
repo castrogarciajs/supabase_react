@@ -6,7 +6,7 @@ export function Posts() {
 
   useEffect(() => {
     get();
-  }, []);
+  }, [posts]);
   console.log(posts);
   return <div>Posts</div>;
 }

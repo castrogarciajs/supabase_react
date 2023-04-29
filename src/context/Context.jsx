@@ -4,10 +4,15 @@ import { supabase } from "../supabase/supabase";
 const PostContext = createContext();
 
 function Context({ children }) {
-  const [posts, setPosts] = useState([]);
+  const [posts, _] = useState([]);
 
   const get = async () => {
-    const response = await supabase.from("supbase_tasks").select();
+    const { data } = await supabase.auth.getUser();
+    const response = await supabase
+      .from("supbase_tasks")
+      .select()
+      .eq("user", data.user.id)
+      .order("id", { ascending: true });
     console.log(response);
   };
   return (
