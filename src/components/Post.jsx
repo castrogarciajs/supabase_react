@@ -7,7 +7,7 @@ export function Post({ post }) {
   };
   return (
     <>
-      <div key={post.id}>
+      <div>
         <div>
           <h1>{post.name}</h1>
           <p>{JSON.stringify(post.done)}</p>

@@ -3,17 +3,19 @@ import { usePost } from "../hooks/usePost";
 import { Post } from "./Post";
 
 export function Posts() {
-  const { posts, get } = usePost();
+  const { posts, get, loading } = usePost();
 
   useEffect(() => {
     get();
   }, []);
 
   return (
-    <>
-      {posts.map((post) => (
-        <Post post={post} />
-      ))}
-    </>
+    <div>
+      {loading ? (
+        <p>loading...</p>
+      ) : (
+        posts.map((post) => <Post post={post} key={post.id} />)
+      )}
+    </div>
   );
 }
