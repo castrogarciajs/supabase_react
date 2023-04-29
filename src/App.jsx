@@ -12,7 +12,7 @@ function App() {
       if (!session) return navigate("/login");
       return navigate("/");
     });
-  }, []);
+  }, [navigate]);
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
