@@ -5,6 +5,7 @@ const PostContext = createContext();
 
 function Context({ children }) {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const get = async (done = false) => {
     const { data } = await supabase.auth.getUser();
@@ -22,6 +23,7 @@ function Context({ children }) {
 
   const create = async (name) => {
     try {
+      setLoading(true);
       const { data } = await supabase.auth.getUser();
 
       const response = await supabase
@@ -39,6 +41,7 @@ function Context({ children }) {
       console.log(error.message);
       return;
     }
+    setLoading(false);
   };
   return (
     <PostContext.Provider
@@ -46,6 +49,7 @@ function Context({ children }) {
         posts,
         get,
         create,
+        loading,
       }}
     >
       {children}
