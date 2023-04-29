@@ -4,16 +4,20 @@ import { supabase } from "../supabase/supabase";
 const PostContext = createContext();
 
 function Context({ children }) {
-  const [posts, _] = useState([]);
+  const [posts, setPosts] = useState([]);
 
-  const get = async () => {
+  const get = async (done = false) => {
     const { data } = await supabase.auth.getUser();
     const response = await supabase
       .from("supbase_tasks")
       .select()
       .eq("user", data.user.id)
+      .eq("done", done)
       .order("id", { ascending: true });
-    console.log(response);
+
+    if (response.error) throw response.error;
+
+    setPosts(response.data);
   };
   return (
     <PostContext.Provider
