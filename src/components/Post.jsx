@@ -1,6 +1,10 @@
+import { usePost } from "../hooks/usePost";
+
 export function Post({ post }) {
+  const { _delete } = usePost();
+
   const handleDelelte = () => {
-    alert("eliminando");
+    _delete(post.id);
   };
   const handleDone = () => {
     alert("actulizando");
@@ -13,7 +17,7 @@ export function Post({ post }) {
           <p>{JSON.stringify(post.done)}</p>
         </div>
         <div>
-          <button onClick={() => handleDelelte()}>DELETE</button>
+          <button onClick={handleDelelte}>DELETE</button>
           <button onClick={() => handleDone()}>DONE</button>
         </div>
       </div>
