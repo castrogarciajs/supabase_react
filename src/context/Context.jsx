@@ -61,8 +61,18 @@ function Context({ children }) {
     setPosts(posts.filter((post) => post.id !== id));
   };
 
-  const update = (id, fields) => {
-    console.log(id, fields);
+  const update = async (id, fields) => {
+    const { data } = await supabase.auth.getUser();
+
+    const response = await supabase
+      .from("supbase_tasks")
+      .update(fields)
+      .eq("user", data.user.id)
+      .eq("id", id);
+
+    if (response.error) throw response.error;
+
+    console.log(response);
   };
 
   return (
