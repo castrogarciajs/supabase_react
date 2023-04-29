@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { usePost } from "../hooks/usePost";
+import { Post } from "./Post";
 
 export function Posts() {
   const { posts, get } = usePost();
@@ -7,17 +8,10 @@ export function Posts() {
   useEffect(() => {
     get();
   }, []);
-  
+
   return (
     <div>
-      {posts.map((post) => {
-        return (
-          <div key={post.id}>
-            <h1>{post.name}</h1>
-            <p>{JSON.stringify(post.done)}</p>
-          </div>
-        );
-      })}
+      <Post posts={posts} />
     </div>
   );
 }
