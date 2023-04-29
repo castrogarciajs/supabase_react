@@ -2,6 +2,7 @@ import { usePost } from "../hooks/usePost";
 
 export function Post({ post }) {
   const { _delete } = usePost();
+
   const handleDelelte = () => {
     _delete(post.id);
   };
