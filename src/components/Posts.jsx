@@ -2,12 +2,12 @@ import { useEffect } from "react";
 import { usePost } from "../hooks/usePost";
 import { Post } from "./Post";
 
-export function Posts() {
+export function Posts({ done }) {
   const { posts, get, loading } = usePost();
 
   useEffect(() => {
-    get();
-  }, []);
+    get(done);
+  }, [done]);
 
   return (
     <div>

@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabase/supabase";
 import { PostForm } from "../components/PostForm";
 import { Posts } from "../components/Posts";
 
 export function HomePage() {
+  const [done, setDone] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,7 +22,15 @@ export function HomePage() {
       <button onClick={handleLogOut}>LogOut</button>
 
       <PostForm />
-      <Posts />
+
+      <header>
+        <span>{done ? "Post to do" : "Post done"}</span>
+        <button onClick={() => setDone(!done)}>
+          {done ? "Post to do" : "Post done"}
+        </button>
+      </header>
+
+      <Posts done={done} />
     </>
   );
 }

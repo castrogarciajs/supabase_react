@@ -60,6 +60,21 @@ function Context({ children }) {
 
     setPosts(posts.filter((post) => post.id !== id));
   };
+
+  const update = async (id, fields) => {
+    const { data } = await supabase.auth.getUser();
+
+    const response = await supabase
+      .from("supbase_tasks")
+      .update(fields)
+      .eq("user", data.user.id)
+      .eq("id", id);
+
+    if (response.error) throw response.error;
+
+    setPosts(posts.filter((post) => post.id !== id));
+  };
+
   return (
     <PostContext.Provider
       value={{
@@ -67,6 +82,7 @@ function Context({ children }) {
         get,
         create,
         _delete,
+        update,
         adding,
         loading,
       }}

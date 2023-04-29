@@ -1,13 +1,13 @@
 import { usePost } from "../hooks/usePost";
 
 export function Post({ post }) {
-  const { _delete } = usePost();
+  const { _delete, update } = usePost();
 
   const handleDelelte = () => {
     _delete(post.id);
   };
   const handleDone = () => {
-    alert("actulizando");
+    update(post.id, { done: !post.done });
   };
   return (
     <>
@@ -18,7 +18,7 @@ export function Post({ post }) {
         </div>
         <div>
           <button onClick={handleDelelte}>DELETE</button>
-          <button onClick={() => handleDone()}>DONE</button>
+          <button onClick={handleDone}>DONE</button>
         </div>
       </div>
     </>
