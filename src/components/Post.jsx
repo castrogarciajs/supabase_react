@@ -1,13 +1,13 @@
 import { usePost } from "../hooks/usePost";
 
 export function Post({ post }) {
-  const { _delete } = usePost();
+  const { _delete, update } = usePost();
 
   const handleDelelte = () => {
     _delete(post.id);
   };
   const handleDone = () => {
-    alert("actulizando");
+    update(post.id, { done: !post.done });
   };
   return (
     <>

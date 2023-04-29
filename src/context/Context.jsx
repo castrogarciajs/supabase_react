@@ -60,6 +60,11 @@ function Context({ children }) {
 
     setPosts(posts.filter((post) => post.id !== id));
   };
+
+  const update = (id, fields) => {
+    console.log(id, fields);
+  };
+
   return (
     <PostContext.Provider
       value={{
@@ -67,6 +72,7 @@ function Context({ children }) {
         get,
         create,
         _delete,
+        update,
         adding,
         loading,
       }}
