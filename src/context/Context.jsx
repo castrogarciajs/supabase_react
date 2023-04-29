@@ -24,11 +24,17 @@ function Context({ children }) {
     try {
       const { data } = await supabase.auth.getUser();
 
-      await supabase.from("supbase_tasks").insert({
-        name: name,
-        user: data.user.id,
-      });
-      return;
+      const response = await supabase
+        .from("supbase_tasks")
+        .insert({
+          name: name,
+          user: data.user.id,
+        })
+        .select();
+
+      if (response.error) throw response.error;
+
+      setPosts([...posts, ...response.data]);
     } catch (error) {
       console.log(error.message);
       return;
