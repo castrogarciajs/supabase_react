@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabase/supabase";
+import { PostForm } from "../components/PostForm";
 
 export function HomePage() {
   const navigate = useNavigate();
