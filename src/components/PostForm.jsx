@@ -12,11 +12,10 @@ export function PostForm() {
     try {
       const { data } = await supabase.auth.getUser();
 
-      const response = await supabase.from("supbase_tasks").insert({
+      await supabase.from("supbase_tasks").insert({
         name: name,
         user: data.user.id,
       });
-      console.log(response);
     } catch (error) {
       console.log(error.message);
     }
