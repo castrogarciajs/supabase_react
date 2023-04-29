@@ -19,6 +19,7 @@ export function PostForm() {
         placeholder="Write a post title"
         onChange={handleChange}
         value={name}
+        required
       />
       <button type="submit" disabled={loading}>
         {loading ? "adding" : "add"}
