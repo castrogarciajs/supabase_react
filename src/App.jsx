@@ -8,12 +8,9 @@ import { NotFoundPage } from "./pages/_404";
 function App() {
   const navigate = useNavigate();
   useEffect(() => {
-    supabase.auth.onAuthStateChange((event, session) => {
-      if (!session) {
-        navigate("/login");
-        return;
-      }
-      navigate("/");
+    supabase.auth.onAuthStateChange((_, session) => {
+      if (!session) return navigate("/login");
+      return navigate("/");
     });
   }, []);
   return (
