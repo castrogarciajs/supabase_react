@@ -10,8 +10,10 @@ export function Posts() {
   }, []);
 
   return (
-    <div>
-      <Post posts={posts} />
-    </div>
+    <>
+      {posts.map((post) => (
+        <Post post={post} />
+      ))}
+    </>
   );
 }

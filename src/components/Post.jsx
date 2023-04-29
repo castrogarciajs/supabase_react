@@ -1,14 +1,10 @@
-export function Post({ posts }) {
+export function Post({ post }) {
   return (
     <>
-      {posts.map((post) => {
-        return (
-          <div key={post.id}>
-            <h1>{post.name}</h1>
-            <p>{JSON.stringify(post.done)}</p>
-          </div>
-        );
-      })}
+      <div key={post.id}>
+        <h1>{post.name}</h1>
+        <p>{JSON.stringify(post.done)}</p>
+      </div>
     </>
   );
 }
