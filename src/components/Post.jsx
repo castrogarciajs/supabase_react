@@ -1,6 +1,11 @@
+import { usePost } from "../hooks/usePost";
+
 export function Post({ post }) {
+
+  const {delete} = usePost()
   const handleDelelte = () => {
-    alert("eliminando");
+
+    delete(post.id)
   };
   const handleDone = () => {
     alert("actulizando");

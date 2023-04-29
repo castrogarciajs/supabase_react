@@ -5,9 +5,7 @@ import { Post } from "./Post";
 export function Posts() {
   const { posts, get, loading } = usePost();
 
-  useEffect(() => {
-    get();
-  }, []);
+  useEffect(get, []);
 
   return (
     <div>
