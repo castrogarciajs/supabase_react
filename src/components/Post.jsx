@@ -17,7 +17,7 @@ export function Post({ post }) {
           <p>{JSON.stringify(post.done)}</p>
         </div>
         <div>
-          <button onClick={() => handleDelelte()}>DELETE</button>
+          <button onClick={handleDelelte}>DELETE</button>
           <button onClick={() => handleDone()}>DONE</button>
         </div>
       </div>
