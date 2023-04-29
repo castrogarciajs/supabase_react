@@ -47,8 +47,15 @@ function Context({ children }) {
     setAdding(false);
   };
 
-  const _delete = (id) => {
-    console.log(id);
+  const _delete = async (id) => {
+    const { data } = await supabase.auth.getUser();
+    const response = await supabase
+      .from("supbase_tasks")
+      .delete()
+      .eq("user", data.user.id)
+      .eq("id", id);
+
+    if (response.error) throw response.error;
   };
   return (
     <PostContext.Provider
