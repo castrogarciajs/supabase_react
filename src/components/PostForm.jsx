@@ -3,10 +3,11 @@ import { useState } from "react";
 export function PostForm() {
   const [title, setTitle] = useState("");
 
-  const handleChange = (e) => setTitle(e.targte.value);
+  const handleChange = (e) => setTitle(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     console.log(title);
   };
   return (
