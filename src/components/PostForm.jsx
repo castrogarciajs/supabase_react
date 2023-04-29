@@ -3,7 +3,7 @@ import { usePost } from "../hooks/usePost";
 
 export function PostForm() {
   const [name, setName] = useState("");
-  const { create, loading } = usePost();
+  const { create, adding } = usePost();
   const handleChange = (e) => setName(e.target.value);
 
   const handleSubmit = async (e) => {
@@ -21,8 +21,8 @@ export function PostForm() {
         value={name}
         required
       />
-      <button type="submit" disabled={loading}>
-        {loading ? "adding" : "add"}
+      <button type="submit" disabled={adding}>
+        {adding ? "adding" : "add"}
       </button>
     </form>
   );
