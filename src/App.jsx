@@ -1,14 +1,19 @@
 import { useEffect } from "react";
 import { supabase } from "./supabase/supabase";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { LoginPage } from "./pages/Login";
 import { HomePage } from "./pages/Home";
 import { NotFoundPage } from "./pages/_404";
 
 function App() {
+  const navigate = useNavigate();
   useEffect(() => {
     supabase.auth.onAuthStateChange((event, session) => {
-      console.log({ event, session });
+      if (!session) {
+        navigate("/login");
+        return;
+      }
+      navigate("/");
     });
   }, []);
   return (
