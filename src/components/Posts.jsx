@@ -13,8 +13,10 @@ export function Posts() {
     <div>
       {loading ? (
         <p>loading...</p>
-      ) : (
+      ) : posts.length > 0 ? (
         posts.map((post) => <Post post={post} key={post.id} />)
+      ) : (
+        <p>No hay posts</p>
       )}
     </div>
   );
