@@ -47,16 +47,16 @@ function Context({ children }) {
     setAdding(false);
   };
 
-  const delete = (id) => {
-    console.log(id)
-  }
+  const _delete = (id) => {
+    console.log(id);
+  };
   return (
     <PostContext.Provider
       value={{
         posts,
         get,
         create,
-        delete,
+        _delete,
         adding,
         loading,
       }}
