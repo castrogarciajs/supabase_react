@@ -17,6 +17,8 @@ export function HomePage() {
     <>
       <h1>Home Page</h1>
       <button onClick={handleLogOut}>LogOut</button>
+
+      <PostForm/>
     </>
   );
 }
