@@ -16,8 +16,10 @@ export function PostForm() {
         name: name,
         user: data.user.id,
       });
+      return;
     } catch (error) {
       console.log(error.message);
+      return;
     }
   };
   return (
