@@ -2,9 +2,12 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabase/supabase";
 import { PostForm } from "../components/PostForm";
+import { usePost } from "../hooks/usePost";
 
 export function HomePage() {
   const navigate = useNavigate();
+  const ctx = usePost();
+  console.log(ctx);
   useEffect(() => {
     return async () => {
       const user = await supabase.auth.getUser();
@@ -18,7 +21,7 @@ export function HomePage() {
       <h1>Home Page</h1>
       <button onClick={handleLogOut}>LogOut</button>
 
-      <PostForm/>
+      <PostForm />
     </>
   );
 }

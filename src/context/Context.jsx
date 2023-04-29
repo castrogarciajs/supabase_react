@@ -1,11 +1,13 @@
 import { createContext } from "react";
 
-const context = createContext();
+const PostContext = createContext();
 
 function Context({ children }) {
   return (
-    <context.Provider value={{ name: "context" }}>{children}</context.Provider>
+    <PostContext.Provider value={{ name: "context" }}>
+      {children}
+    </PostContext.Provider>
   );
 }
 
-export { context, Context };
+export { PostContext, Context };
