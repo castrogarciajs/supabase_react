@@ -24,8 +24,10 @@ export function HomePage() {
       <PostForm />
 
       <header>
-        <span>{done ? "show succesfully" : "show pending"}</span>
-        <button onClick={() => setDone(!done)}>Show pending</button>
+        <span>{done ? "Post to do" : "Post done"}</span>
+        <button onClick={() => setDone(!done)}>
+          {done ? "Post to do" : "Post done"}
+        </button>
       </header>
 
       <Posts done={done} />
