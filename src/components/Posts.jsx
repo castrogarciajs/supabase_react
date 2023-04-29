@@ -6,7 +6,7 @@ export function Posts() {
   const { posts, get, loading } = usePost();
 
   useEffect(() => {
-    get(true);
+    get();
   }, []);
 
   return (

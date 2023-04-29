@@ -72,7 +72,7 @@ function Context({ children }) {
 
     if (response.error) throw response.error;
 
-    console.log(response);
+    setPosts(posts.filter((post) => post.id !== id));
   };
 
   return (
