@@ -6,7 +6,18 @@ export function Posts() {
 
   useEffect(() => {
     get();
-  }, [posts]);
+  }, []);
   console.log(posts);
-  return <div>Posts</div>;
+  return (
+    <div>
+      {posts.map((post) => {
+        return (
+          <div key={post.id}>
+            <h1>{post.name}</h1>
+            <p>{JSON.stringify(post.done)}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
