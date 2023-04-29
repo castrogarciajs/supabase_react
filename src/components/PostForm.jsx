@@ -1,14 +1,22 @@
 import { useState } from "react";
+import { supabase } from "../supabase/supabase";
 
 export function PostForm() {
-  const [title, setTitle] = useState("");
+  const [name, setName] = useState("");
 
-  const handleChange = (e) => setTitle(e.target.value);
+  const handleChange = (e) => setName(e.target.value);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(title);
+    try {
+      const response = await supabase.from("supbase_tasks").insert({
+        name,
+      });
+      console.log(response);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
   return (
     <form onSubmit={handleSubmit}>
