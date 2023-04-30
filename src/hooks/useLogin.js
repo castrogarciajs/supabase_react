@@ -12,8 +12,8 @@ export function useLogin() {
       await supabase.auth.signInWithOtp({
         email,
       });
-      setMessage("Te ha llegado un correo de acceso a tu gmail");
       setEmail("");
+      setMessage("Te ha llegado un correo de acceso a tu gmail");
       return;
     } catch (error) {
       console.log(error.message);
