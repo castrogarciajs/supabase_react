@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 0.1rem;
+  animation: letter 5s steps(30, end) infinite;
+}
+
+@keyframes letter {
+  from {
+    width: 0;
+  }
+  to {
+    text-align: center;
+    width: 100%;
+  }
+}
