@@ -14,13 +14,13 @@ function App() {
     });
   }, [navigate]);
   return (
-    <div className="bg-yellow-400">
+    <>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </div>
+    </>
   );
 }
 

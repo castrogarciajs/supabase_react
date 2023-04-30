@@ -17,13 +17,10 @@ export function LoginPage() {
       <h1 className="md:text-7xl  text-4xl mb-10 font-bold font-mono">
         Supabase React
       </h1>
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-6 flex flex-col">
         <span className="font-bold text-green-500">{message}</span>
-        <p>
-          <label
-            htmlFor="email"
-            className="block text-sm mb-3 text-3xl font-mono font-bold"
-          >
+        <p className="flex flex-col gap-3">
+          <label htmlFor="email" className="font-mono font-bold">
             Email
           </label>
           <input
@@ -33,13 +30,13 @@ export function LoginPage() {
             placeholder="Ingresa tu email"
             required
             value={email}
-            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 placeholder:pl-1 outline-none"
+            className="rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 placeholder:pl-1 outline-none"
           />
         </p>
         <p className="flex justify-center">
           <button
             type="submit"
-            className="bg-green-500 p-4 rounded-md w-60 h-10 flex justify-center items-center font-mono font-bold text-white"
+            className="bg-green-500 p-4 rounded-md w-60 h-10 flex justify-center items-center font-mono font-bold text-white hover:bg-green-700 transition-colors"
           >
             Sing In
           </button>
