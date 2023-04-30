@@ -14,7 +14,9 @@ export function LoginPage() {
   const { handleChange, handleSubmit } = useLogin();
   return (
     <div className="flex h-screen flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8">
-      <h1 className="text-7xl mb-10 font-bold font-mono">Supabase React</h1>
+      <h1 className="md:text-7xl  text-4xl mb-10 font-bold font-mono">
+        Supabase React
+      </h1>
       <form onSubmit={handleSubmit} className="space-y-6">
         <p>
           <label
@@ -28,6 +30,7 @@ export function LoginPage() {
             name="email"
             onChange={handleChange}
             placeholder="Ingresa tu email"
+            required
             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 placeholder:pl-1 outline-none"
           />
         </p>

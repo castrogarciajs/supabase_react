@@ -5,6 +5,7 @@
 h1 {
   overflow: hidden;
   white-space: nowrap;
+  text-shadow: 2px 2px 0px #202020;
   letter-spacing: 0.1rem;
   animation: letter 5s steps(30, end) infinite;
 }
