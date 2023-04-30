@@ -19,7 +19,7 @@ export function HomePage() {
 
   const handleLogOut = () => supabase.auth.signOut();
   return (
-    <>
+    <div className="h-screen">
       <LogOut handleLogOut={handleLogOut} />
 
       <PostForm />
@@ -27,6 +27,6 @@ export function HomePage() {
       <Dashboard setDone={setDone} done={done} />
 
       <Posts done={done} />
-    </>
+    </div>
   );
 }
