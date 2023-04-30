@@ -18,7 +18,7 @@ export function LoginPage() {
         <p>
           <label
             htmlFor="email"
-            className="block text-sm font-medium leading-6 text-gray-900"
+            className="block text-sm font-medium leading-6 text-gray-900 mb-3 text-2xl font-mono font-bold"
           >
             Email
           </label>
@@ -27,11 +27,16 @@ export function LoginPage() {
             name="email"
             onChange={handleChange}
             placeholder="Ingresa tu email"
-            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 placeholder:pl-3"
+            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 placeholder:pl-1 outline-none"
           />
         </p>
         <p>
-          <button type="submit">Sing In</button>
+          <button
+            type="submit"
+            className="bg-green-500 p-4 rounded-md w-60 h-10 flex justify-center items-center font-mono font-bold text-white"
+          >
+            Sing In
+          </button>
         </p>
       </form>
     </div>
