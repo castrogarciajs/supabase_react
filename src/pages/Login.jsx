@@ -14,11 +14,12 @@ export function LoginPage() {
   const { handleChange, handleSubmit } = useLogin();
   return (
     <div className="flex h-screen flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8">
+      <h1 className="text-7xl mb-10 font-bold font-mono">Supabase React</h1>
       <form onSubmit={handleSubmit} className="space-y-6">
         <p>
           <label
             htmlFor="email"
-            className="block text-sm font-medium leading-6 text-gray-900 mb-3 text-2xl font-mono font-bold"
+            className="block text-sm mb-3 text-3xl font-mono font-bold"
           >
             Email
           </label>
