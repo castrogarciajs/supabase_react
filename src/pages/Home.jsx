@@ -18,7 +18,7 @@ export function HomePage() {
   const handleLogOut = () => supabase.auth.signOut();
   return (
     <>
-      <h1>Home Page</h1>
+      <h2>Home Page</h2>
       <button onClick={handleLogOut}>LogOut</button>
 
       <PostForm />
