@@ -13,7 +13,7 @@ export function LoginPage() {
   }, [navigate]);
   const { handleChange, handleSubmit, email, message } = useLogin();
   return (
-    <div className="flex h-screen flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8">
+    <div className="flex flex-1 flex-col justify-center items-center px-6 py-12 lg:px-8">
       <h1 className="md:text-7xl  text-4xl mb-10 font-bold font-mono">
         Supabase React
       </h1>
