@@ -13,7 +13,7 @@ export function Post({ post }) {
     <>
       <div>
         <div>
-          <h1>{post.name}</h1>
+          <h2>{post.name}</h2>
           <p>{JSON.stringify(post.done)}</p>
         </div>
         <div>

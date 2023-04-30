@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { supabase } from "../supabase/supabase";
 import { PostForm } from "../components/PostForm";
 import { Posts } from "../components/Posts";
+import { LogOut } from "../components/LogOut";
+import { Dashboard } from "../components/Dashboard";
 
 export function HomePage() {
   const [done, setDone] = useState(false);
@@ -17,20 +19,14 @@ export function HomePage() {
 
   const handleLogOut = () => supabase.auth.signOut();
   return (
-    <>
-      <h1>Home Page</h1>
-      <button onClick={handleLogOut}>LogOut</button>
+    <div className="h-screen">
+      <LogOut handleLogOut={handleLogOut} />
 
       <PostForm />
 
-      <header>
-        <span>{done ? "Post to do" : "Post done"}</span>
-        <button onClick={() => setDone(!done)}>
-          {done ? "Post to do" : "Post done"}
-        </button>
-      </header>
+      <Dashboard setDone={setDone} done={done} />
 
       <Posts done={done} />
-    </>
+    </div>
   );
 }
