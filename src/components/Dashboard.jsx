@@ -2,7 +2,7 @@ export function Dashboard({ setDone, done }) {
   return (
     <header className="p-5 flex justify-center gap-20 items-center">
       <span className="font-bold text-zinc-800 text-3xl">
-        {done ? "Post to do" : "Post done: "}
+        {done ? "Post to do: " : "Post done: "}
       </span>
       <button
         onClick={() => setDone(!done)}
