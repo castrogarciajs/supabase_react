@@ -10,7 +10,7 @@ export function Posts({ done }) {
   }, [done]);
 
   return (
-    <div>
+    <div className="px-10 flex justify-center gap-3 mt-3">
       {loading ? (
         <p>loading...</p>
       ) : posts.length > 0 ? (
