@@ -10,7 +10,7 @@ export function Posts({ done }) {
   }, [done]);
 
   return (
-    <div>
+    <div className="">
       {loading ? (
         <p>loading...</p>
       ) : posts.length > 0 ? (
