@@ -14,7 +14,7 @@ export function Post({ post }) {
       <div>
         <div>
           <h2>{post.name}</h2>
-          <p>{JSON.stringify(post.done)}</p>
+          <p>{post.done ? "Post completed" : "Post not completed"}</p>
         </div>
         <div>
           <button onClick={handleDelelte}>DELETE</button>
